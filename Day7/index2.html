@@ -1,0 +1,498 @@
+<!-- Cursor pointer, hover, and show more div -->
+<head>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+    /* Code change starts here */
+    body{
+        margin: 0;
+        background-color: #0e1620;
+    }
+    header{
+        padding: 10px 40px;
+    }
+    header i{
+        color: #1DA1F2;
+        font-size: 2.5rem;
+    }
+    /* Code change ends here */
+    main{
+        font-family: 'Roboto', sans-serif;
+        margin: 0 auto;
+        width: fit-content;
+        display: grid;
+        grid-template-columns: 300px 600px 300px;
+        padding: 0px 30px;
+    }
+    .profile {
+        width: 300px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .profile-header{
+        text-align: center;
+        border-radius: 12px 12px 0 0;
+        background: rgb(13, 104, 231);
+        background: url("https://64.media.tumblr.com/ad7c23f923e144352007a7de049c98ac/92afd8a19abae2b8-a4/s640x960/ddc63bf27f5d84ec18e39bfba7d5e2ae15b2ddfb.png");
+        background-position: center;
+        background-size: cover;
+    }
+    .profile img {
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        position: relative;
+        top: 25px;
+    }
+    .profile-body {
+        background-color: #243447;
+        border-radius: 0px 0px 15px 15px;
+    }
+    .profile-info {
+        margin: 0 30px;
+        padding-top: 35px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    .profile-info h1 {
+        font-size: 23px;
+        margin-top: 0;
+        color: 	#F5F8FA;
+        font-weight: 300;
+        margin-bottom: 0px;
+    }
+    .profile-info h2 {
+        font-size: 15px;
+        color:  #657786;
+        margin: 5px 0px;
+    }
+    .profile-info p{
+        font-size: 13px;
+        color: #AAB8C2;
+    }
+    
+    hr{
+        border-color: #243447;
+        border-width: 0.1;
+        margin: 0;
+    }
+    
+    .stat-box {
+        padding: 5px 0;
+        display: flex;
+    }
+    
+    .stat-box div {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .stat-box h3 {
+        color: #F5F8FA;
+        margin-bottom: 0;
+    }
+    
+    .stat-box p {
+        color: #AAB8C2;
+        margin-top: 8px;
+    }
+    
+    .my-profile {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .my-profile p{
+        color: #1DA1F2;
+    }
+    .follow-sugggestion{
+        font-family: 'Roboto', sans-serif;
+        background-color: #243447;
+        width: 270px;
+        border-radius: 12px;
+        padding: 14px;
+        margin: 10px 0px;
+    }
+    .follow-sugggestion h4{
+        color: #F5F8FA;
+        margin: 0px 0px 20px 0px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .follow-profile{
+        display: flex;
+        gap: 5px;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .follow-profile img{
+        border-radius: 50%;
+        height: 3rem;
+        width: 3rem;
+    }
+
+    .follow-info h5{
+        margin: 0px;
+        font-size: 15px;
+        color: #F5F8FA;
+        font-weight: 400;
+    }
+    .follow-info p{
+        margin: 3px;
+        font-size: 12px;
+        color: #657786;
+    }
+    .follow-btn{
+        background: white;
+        padding: 7px 15px;
+        text-align: center;
+        height: fit-content;
+        border-radius: 100px;
+        font-weight: 500;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    .follow-btn:hover{
+        background: rgb(195, 194, 194);
+    }
+    .show-more{
+        color: #1DA1F2;
+        font-size: 12px;
+        margin: 25px 0px 5px 0px;
+        cursor: pointer;
+    }
+
+    .show-more:hover{
+        color: #1989cf;
+    }
+
+    .posts{
+        background-color: #243447;
+        margin: 0px 20px;
+        border-radius: 20px;
+    }
+
+    .post-input{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .post-input img{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+    }
+
+    .post-input input{
+        width: 100%;
+        padding: 14px 15px;
+        border-radius: 10px;
+        border: none;
+        font-size: 17px;
+        background-color: #172638;
+        color: white;
+    }
+
+    .post-types{
+        display: flex;
+        justify-content:space-around;
+        padding-left: 3.5rem;
+    }
+
+    .type{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 20px;
+        border: 1px solid grey;
+        border-radius: 25px;
+        font-size: 13px;
+        color: #F5F8FA;
+        cursor: pointer;
+    }
+
+    .type:hover{
+        background:#172638;
+        border: 1px solid white;
+        color: #F5F8FA;
+    }
+
+    .type p
+    {
+        margin: 0;
+    }
+
+    .type i{
+        font-size: 15px;
+    }
+
+    .type:nth-child(1) i{
+        color: rgb(1, 158, 48)
+    }
+
+    .type:nth-child(2) i{
+        color: rgb(45, 114, 252)
+    }
+
+    .type:nth-child(3) i{
+        color: rgb(255, 110, 58)
+    }
+
+    .type:nth-child(4) i{
+        color: rgb(204, 165, 24)
+    }
+
+    .trending{
+        background-color: #243447;
+        height: 600px;
+        border-radius: 12px;
+    }
+
+    .trend-header{
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        align-items: center;
+        padding: 12px;
+    }
+
+    .trend-header h4{
+        margin: 5px 0px;
+    }
+
+    .trend-category h3{
+        color: #AAB8C2;
+        font-size: 14px;
+        font-weight: 300;
+        padding: 0px 12px;
+    }
+
+    .trend {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 10px;
+        cursor: pointer;
+    }
+    .trend:hover{
+        background-color: #2e425d;
+    }
+    .trend h4{
+        margin: 5px 0px;
+        color: white;
+        font-size: 14px;
+    }
+    .trend p{
+        margin: 2px 0px;
+        color: #AAB8C2;
+        font-size: 12px;
+    }
+    .trend i {
+        color: #AAB8C2;
+        cursor: pointer;
+    }
+    .trend i:hover{
+        color: white
+    }
+    .trending .show-more{
+        padding: 0px 12px;
+    }
+    </style>
+    </head>
+<body>
+    <header>
+        <i class="fa-brands fa-twitter"></i>
+    </header>
+    <main>
+        <div class="sidebar">
+            <div class="profile">
+                <div class="profile-header">
+                    <img src="https://img.freepik.com/premium-vector/portrait-beautiful-young-woman-with-short-wavy-hair_478440-368.jpg" alt="Profile Image" />
+                </div>
+                <div class="profile-body">
+                    <div class="profile-info">
+                        <h1>Sophia Smith</h1>
+                        <h2>@sophia</h1>
+                        <p>Writes about tech and design</p>
+                    </div>
+            
+                    <hr/>
+            
+                    <div class="stat-box">
+                        <div>
+                            <h3>6,664</h3>
+                            <p>Following</p>
+                        </div>
+                        <hr id="stat-partition"/>
+                        <div>
+                            <h3>9,991</h3>
+                            <p>Followers</p>
+                        </div>
+                    </div>
+            
+                    <hr/>
+            
+                    <div class="my-profile">
+                        <p> My Profile</p>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="follow-sugggestion">
+                <h4>Who is to follow you</h4>
+        
+                <div class="follow-profile">
+                    <img src="https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg"/>
+                    <div class="follow-info">
+                        <h5>AlphaX</h5>
+                        <p>@alphax</p>
+                    </div>
+                    <div class="follow-btn">
+                        Follow
+                    </div>
+                </div>
+        
+                <div class="follow-profile">
+                    <img src="https://i.pinimg.com/474x/bf/e9/89/bfe989b690e9674b5b00e78c4c1aa2dc.jpg"/>
+                    <div class="follow-info">
+                        <h5>Pearson Mike</h5>
+                        <p>@pearsonmike</p>
+                    </div>
+                    <div class="follow-btn">
+                        Follow
+                    </div>
+                </div>
+        
+                <div class="follow-profile">
+                    <img src="https://1fid.com/wp-content/uploads/2022/07/aesthetic-profile-picture-2-1024x1024.jpg"/>
+                    <div class="follow-info">
+                        <h5>Albert Snow</h5>
+                        <p>@albertsnow</p>
+                    </div>
+                    <div class="follow-btn">
+                        Follow
+                    </div>
+                </div>
+        
+                <div class="show-more">
+                    Show more
+                </div>
+            </div>
+        </div>
+    
+        <div class="posts">
+            <div class="posts-creation">
+                <div class="post-input">
+                    <img src="https://img.freepik.com/premium-vector/portrait-beautiful-young-woman-with-short-wavy-hair_478440-368.jpg" alt="Profile Image" />
+                    <input placeholder="What's happening?"></input>
+                </div>
+                <div class="post-types">
+                    <div class="type">
+                        <i class="fa-sharp fa-regular fa-image"></i>
+                        <p>Photo</p>
+                    </div>
+    
+                    <div class="type">
+                        <i class="fa-regular fa-circle-play"></i>
+                        <p>Video</p>
+                    </div>
+    
+                    <div class="type">
+                        <i class="fa-solid fa-list"></i>
+                        <p>Thread</p>
+                    </div>
+    
+                    <div class="type">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <p>Schedule</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="trending">
+            <div class="trend-header">
+                <h4>Trend for you</h4>
+                <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+    
+            <div class="trend-category">
+                <h3>TRENDING IN INDIA</h3>
+                <div class="trend">
+                    <div>
+                        <h4>#t20WordCup</h4>
+                        <p>97.7k Tweets</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                </div>
+    
+                <div class="trend">
+                    <div>
+                        <h4>#LokSabhaElections</h4>
+                        <p>77.2k Tweets</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                </div>
+    
+                <div class="trend">
+                    <div>
+                        <h4>#dhoni</h4>
+                        <p>49.2k Tweets</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                </div>
+    
+                <hr />
+            </div>
+    
+            <div class="trend-category">
+                <h3>TRENDING IN WEB3</h3>
+                <div class="trend">
+                    <div>
+                        <h4>#nfts</h4>
+                        <p>34.7k Tweets</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                </div>
+    
+                <hr />
+            </div>
+    
+            <div class="trend-category">
+                <h3>TRENDING IN BUISNESS</h3>
+    
+                <div class="trend">
+                    <div>
+                        <h4>#nifty</h4>
+                        <p>23.1k Tweets</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="show-more">
+                Show more
+            </div>
+        </div>
+    </main>
+</body>
