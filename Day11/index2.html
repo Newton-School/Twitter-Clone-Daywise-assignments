@@ -1,0 +1,168 @@
+<style>
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background-color: #14171A;
+      color: #FFFFFF;
+    }
+
+    header {
+      background-color: #192734;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #192734;
+      padding: 10px;
+      text-align: center;
+    }
+
+    footer p {
+      color: #FFFFFF;
+      margin: 0;
+    }
+
+    h1 {
+      color: #1DA1F2;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #192734;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background-color: #14171A;
+      color: #FFFFFF;
+    }
+
+    h1 {
+      color: #1DA1F2;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #192734;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #233445;
+      margin-bottom: 10px;
+      background-color: #283C50;
+      color: #FFFFFF;
+    }
+
+    input[type="checkbox"] {
+      margin-top: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #1DA1F2;
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0C87B8;
+    }
+  </style>
+<body>
+    <header>
+        <nav>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Values</a></li>
+            <li><a href="#">Our Vision</a></li>
+          </ul>
+        </nav>
+    </header>    
+    <main>
+        <h1>Customer Feedback Form</h1>
+        <form action="submit_customer_feedback.php" method="POST" target="_blank">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone"><br><br>
+        
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" required><br><br>
+        
+        <label for="feedback">Feedback:</label><br>
+        <textarea id="feedback" name="feedback" rows="5" required></textarea><br><br>
+        
+        <label for="subscribe">Subscribe to Newsletter:</label>
+        <input type="checkbox" id="subscribe" name="subscribe" value="yes"><br><br>
+        
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+        
+        <label for="favoriteProduct">Favorite Product:</label>
+        <input type="text" id="favoriteProduct" name="favoriteProduct"><br><br>
+        
+        <label for="birthDate">Birth Date:</label>
+        <input type="date" id="birthDate" name="birthDate"><br><br>
+        
+        <label for="agreement">Agree to Terms:</label>
+        <input type="checkbox" id="agreement" name="agreement" required><br><br>
+        
+        <input type="submit" value="Submit">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 Company Name. All rights reserved.</p>
+    </footer>
+  </body>
